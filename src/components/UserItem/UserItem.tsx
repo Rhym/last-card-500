@@ -1,9 +1,12 @@
 import React from "react";
 
 import { useDispatch, UserType } from "../../store/store";
-import { Button, Text, View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 import styled from "styled-components";
 import CardDisplay from "../CardDisplay";
+import Icons from "../Icons";
+
+const { Close } = Icons;
 
 interface Props extends UserType {
   index?: number;
@@ -13,19 +16,12 @@ const Wrapper = styled(View)`
   display: flex;
   flex-direction: row;
   align-items: center;
-
-  & + & {
-    margin-top: 16px;
-  }
-`;
-
-const CardWrapper = styled(View)`
-  transform: rotate(-5deg);
 `;
 
 const Title = styled(Text)`
-  font-size: 1.2rem;
+  font-size: 20px;
   margin-left: 16px;
+  color: #fff;
 `;
 
 const Content = styled(View)`
@@ -39,6 +35,24 @@ const Actions = styled(View)`
   margin-left: 8px;
 `;
 
+const StyledButton = styled(TouchableOpacity)`
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+`;
+
+const StyledButtonText = styled(Text)`
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+`;
+
 const UserItem: React.FC<Props> = ({ id, index, title }) => {
   const dispatch = useDispatch();
 
@@ -48,16 +62,15 @@ const UserItem: React.FC<Props> = ({ id, index, title }) => {
   return (
     <Wrapper>
       <Content>
-        <CardWrapper>
-          <CardDisplay index={index} />
-        </CardWrapper>
+        <CardDisplay index={index} />
         <Title>{title}</Title>
       </Content>
       <Actions>
-        <Button
-          onPress={() => dispatch({ type: "DELETE_USER", id })}
-          title="Remove"
-        />
+        <StyledButton onPress={() => dispatch({ type: "DELETE_USER", id })}>
+          <StyledButtonText>
+            <Close fill="#fff" />
+          </StyledButtonText>
+        </StyledButton>
       </Actions>
     </Wrapper>
   );

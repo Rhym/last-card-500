@@ -6,6 +6,8 @@ build: ## Build the application
 	cd $(CURRENT_DIR); expo build:android;
 install: ## Install dependencies
 	cd $(CURRENT_DIR); nvm use; yarn install;
+android: ## Start android server
+	cd $(CURRENT_DIR); expo start --android;
 watch: ## Start development server
 	cd $(CURRENT_DIR); yarn run web;
 start: watch

@@ -6,6 +6,8 @@ import CardSeven from "./CardSeven";
 import CardSix from "./CardSix";
 import CardThree from "./CardThree";
 import CardTwo from "./CardTwo";
+import Close from "./Close";
+import Logo from "./Logo";
 
 export type IconProps = {
   CardEight: typeof CardEight;
@@ -16,6 +18,8 @@ export type IconProps = {
   CardSix: typeof CardSix;
   CardThree: typeof CardThree;
   CardTwo: typeof CardTwo;
+  Close: typeof Close;
+  Logo: typeof Logo;
 };
 
 const Icons = {} as IconProps;
@@ -28,5 +32,7 @@ Icons.CardSeven = CardSeven;
 Icons.CardSix = CardSix;
 Icons.CardThree = CardThree;
 Icons.CardTwo = CardTwo;
+Icons.Close = Close;
+Icons.Logo = Logo;
 
 export default Icons;

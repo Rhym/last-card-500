@@ -14,19 +14,14 @@ const Wrapper = styled(View)`
   display: flex;
   flex-direction: row;
   align-items: center;
-
-  & + & {
-    margin-top: 16px;
-  }
 `;
 
-const CardWrapper = styled(View)`
-  transform: rotate(-5deg);
-`;
+const CardWrapper = styled(View)``;
 
 const Title = styled(Text)`
-  font-size: 1.2rem;
+  font-size: 20px;
   margin-left: 16px;
+  color: #fff;
 `;
 
 const Content = styled(View)`
@@ -41,24 +36,26 @@ const Actions = styled(View)`
   flex: 0 0 auto;
   flex-direction: row;
   align-items: center;
-
-  > * + * {
-    margin-left: 16px;
-  }
 `;
 
 const Score = styled(Text)`
-  font-size: 1.2rem;
+  font-size: 20px;
   margin-left: 16px;
+  color: #fff;
 `;
 
 const StyledInput = styled(TextInput)`
-  width: 56px;
-  border-radius: 4px;
-  border: 2px solid black;
-  height: 32px;
-  padding: 0 8px;
+  flex: 0 0 auto;
   text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  margin-left: 16px;
+  padding: 0 8px;
+  height: 40px;
+  border-radius: 4px;
+  width: 56px;
+  margin-right: 8px;
+  background: transparent;
+  color: #fff;
 `;
 
 const UserScoreItem: React.FC<Props> = ({ id, index, score, title, total }) => {

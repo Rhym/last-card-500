@@ -37,7 +37,7 @@ const initialState: State = {
     },
     {
       id: 2,
-      title: "Emma",
+      title: "Mike",
       score: [],
       total: 0,
     },
@@ -55,8 +55,6 @@ const reducer = (state: State, action: Action): State => {
         users: state.users.map((user) => {
           user.score = [];
           user.total = 0;
-
-          console.log(user);
 
           return user;
         }),
