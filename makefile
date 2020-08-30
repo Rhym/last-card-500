@@ -2,6 +2,8 @@ CURRENT_DIR = ${CURDIR}
 PACKAGE_BIN = node_modules/.bin
 
 default: help
+build: ## Build the application
+	cd $(CURRENT_DIR); expo build:android;
 install: ## Install dependencies
 	cd $(CURRENT_DIR); nvm use; yarn install;
 watch: ## Start development server
