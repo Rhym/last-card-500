@@ -1,9 +1,6 @@
 import React from "react";
-import { View } from "react-native";
+import { Image, View } from "react-native";
 import styled from "styled-components";
-import Icons from "../Icons";
-
-const { Logo } = Icons;
 
 const StyledHeader = styled(View)`
   margin-top: 32px;
@@ -18,7 +15,10 @@ const Header = () => {
 
   return (
     <StyledHeader>
-      <Logo width={100} height={70} />
+      <Image
+        source={require("../../../assets/logo.png")}
+        style={{ width: 100, height: 70 }}
+      />
     </StyledHeader>
   );
 };
