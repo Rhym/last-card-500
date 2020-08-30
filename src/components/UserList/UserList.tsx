@@ -4,19 +4,30 @@ import { useTrackedState } from "../../store/store";
 import UserItem from "../UserItem";
 import NewUser from "../NewUser";
 import { View } from "react-native";
+import styled from "styled-components";
+
+const Wrapper = styled(View)`
+  width: 100%;
+`;
+
+const Form = styled(View)`
+  margin-top: 32px;
+`;
 
 const UserList: React.FC = () => {
   const state = useTrackedState();
 
   return (
-    <View>
-      <View>
-        {state.users.map(({ id, title }) => (
-          <UserItem key={id} id={id} title={title} />
-        ))}
-        <NewUser />
-      </View>
-    </View>
+    <Wrapper>
+      {state.users.map((node, index) => (
+        <UserItem key={node.id} index={index} {...node} />
+      ))}
+      {state.users.length < 8 && (
+        <Form>
+          <NewUser />
+        </Form>
+      )}
+    </Wrapper>
   );
 };
 
