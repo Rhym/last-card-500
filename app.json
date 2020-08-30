@@ -19,9 +19,9 @@
     },
     "android": {
       "package": "ryanpotternz.last_card_500",
-      "versionCode": 1
+      "versionCode": 1,
+      "permissions": []
     },
-    "permissions": [],
     "androidNavigationBar": {
       "backgroundColor": "#000000"
     }
