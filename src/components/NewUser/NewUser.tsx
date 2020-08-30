@@ -1,7 +1,13 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
-import {useDispatch} from "../../store/store";
-import {Keyboard, Text, TextInput, TouchableOpacity, View} from "react-native";
+import { useDispatch } from "../../store/store";
+import {
+  Keyboard,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import styled from "styled-components";
 
 const Form = styled(View)`
@@ -57,10 +63,13 @@ const NewUser: React.FC = () => {
         onChangeText={(text) => setText(text)}
         onSubmitEditing={() => addUser()}
       />
-      <StyledButton onPress={() => {
-        addUser();
-        Keyboard.dismiss();
-      }} disabled={text === ""}>
+      <StyledButton
+        onPress={() => {
+          addUser();
+          Keyboard.dismiss();
+        }}
+        disabled={text === ""}
+      >
         <StyledButtonText>Add player</StyledButtonText>
       </StyledButton>
     </Form>
